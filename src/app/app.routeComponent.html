@@ -1,0 +1,33 @@
+
+
+          <form *ngIf="!deleteType; else deleteBox">
+            <h3 style="color:aquamarine">Update</h3>
+              <div class="for-group" >
+                  <label for="firstName">Last Name</label>
+                  <input [(ngModel)] = "firstName" name= "firstName" id="firstName"  type="text" class="form-control">
+              </div>
+            <div class="for-group">
+              <label for="lastName">Last Name</label>
+              <input [(ngModel)] = "lastName" name= "lastName" id="lastName"  type="text" class="form-control">
+            </div>&nbsp;&nbsp;&nbsp; 
+            <div class="actions" style="float:right">&nbsp;&nbsp;&nbsp;
+                <button mat-raised-button color="warn" (click)="close()">Close</button>
+            </div>
+            <div class="actions" style="float:right">
+            <button mat-raised-button color="primary" (click)="save()" >Save</button>
+            </div>
+      </form>
+      <form> 
+        <ng-template #deleteBox>
+           <h2 style="color:red;">Confirm Message</h2>
+           <h3 color:red>Are you sure?</h3>
+           <div class="actions" style="float:right">
+              <button mat-raised-button color="primary" (click)="no()">No</button>
+           </div>
+           <div class="actions" style="float:right">
+              <button mat-raised-button color="warn" (click)="yes()">Yes</button>
+           </div> 
+        </ng-template>
+      </form>
+
+      

@@ -1,0 +1,85 @@
+
+
+
+
+    
+         
+     <h1>Vidyasagar</h1>
+ <!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   <ng-container matColumnDef="id">
+     <th mat-header-cell *matHeaderCellDef>ID</th>
+     <td mat-cell *matCellDef="let element">{{element.id}}</td>
+   </ng-container>
+   <ng-container *matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+     <td mat-cell *matCellDef="let element">{{element.first_name}}</td>
+   </ng-container>
+   <ng-container *matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+     <td mat-cell *matCellDef="let element">{{element.last_name}}</td>
+   </ng-container>
+   <ng-container *matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef>Avatar</th>
+     <td mat-cell *matCellDef="let element">{{element.avatar}}</td>
+   </ng-container>
+   <tr mat-row-cell *matHeaderRowDef="displayedColumns"></tr>
+   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+ </table>-->
+          
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th> 
+      &nbsp;&nbsp;&nbsp;
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td> &nbsp;&nbsp;
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      &nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;
+      <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>&nbsp;&nbsp;
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>&nbsp;&nbsp;  
+      <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef> Avatar </th>&nbsp;&nbsp;
+      <td mat-cell *matCellDef="let element"> <a>{{element.avatar}}</a> </td>
+    </ng-container>
+    <ng-container matColumnDef="Update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>&nbsp;&nbsp;
+        <td mat-cell *matCellDef="let element"> <button (click)="UpdateData(element.id)">Update</button></td>
+      </ng-container>
+        <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>&nbsp;&nbsp;
+            <td mat-cell *matCellDef="let element"> <button (click)="DeleteData(element.id)">Delete</button></td>
+        </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+        
+    
+
+    
+
+  
+
+ 
+  
+
+    
+
+

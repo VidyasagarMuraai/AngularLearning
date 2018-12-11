@@ -1,0 +1,30 @@
+<form action="">
+    <div class='form-group'>
+            <label for="">UserID</label>
+            <mat-form-field>
+            <input matInput placeholder="login ID" value="vidyasagar">
+            </mat-form-field>
+
+    </div>
+    <div class="form-group">
+            <label for="">Password</label>
+            <mat-form-field>
+            <input matInput placeholder="password" value="vidyasagar">
+            </mat-form-field>
+    </div>
+   <nav>
+            <div>
+            <a routerLink="/app" >
+            <button mat-raised-button color="primary" >Login</button> 
+            </a>
+            </div>
+            <div>
+            <a routerLink="/routing" >
+           <button button mat-raised-button color="accent">Forgot Password</button>
+           </a>
+          </div>
+      
+      </nav>
+      <router-outlet></router-outlet>
+    </form>
+
