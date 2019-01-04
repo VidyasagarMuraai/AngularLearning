@@ -6,7 +6,7 @@
   <div fxLayout="row" fxLayoutAlign="space-around center" class="content">
     
           <div>
-              <button mat-raised-button  color="primary">Leave Request</button>
+              <button mat-raised-button  color="primary" (click)="leaveRequestRise()" >Leave Request</button>
           </div>
           <div>
               <button mat-raised-button  color="primary">No of Leaves</button>
@@ -19,9 +19,98 @@
           </div>
           <div>
               <mat-icon img mat-card-image style="margin-left:24%;width:45%;height:110px;" src="/src/images/download.jpg" alt="Muraai">account_box</mat-icon>
-              
           </div>
       
+  </div>
+  <div>
+    <h1>Welcome {{username}}</h1>
+  </div>
+
+  <div  fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="60px" class="content">
+      <div >
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name" value={{username}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div >
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Father Name" value={{father_name}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div >
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Mother Name" value={{mother_name}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div >
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Mobile No" value={{phoneNo}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Address" value={{location}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Designation" value={{designation}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Experience" value={{experience}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Projects Handled" value={{projects}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Project Manager" value={{manager}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Leaves Applied" value={{leaves_applied}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Leaves Remaining" value={{leaves_remain}}>
+              </mat-form-field>
+            </form>
+      </div>
+      <div>
+          <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Status" value={{status}}>
+              </mat-form-field>
+            </form>
+      </div>
   </div>
        
 

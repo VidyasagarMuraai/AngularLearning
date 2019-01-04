@@ -1,38 +1,39 @@
 <div class="container" fxLayout="row wrap" fxLayoutAlign="Start" *ngIf="leaveShow">
-        <div class="blocks" fxLayout="row"  fxFlex = "auto">
-            <label>Start Date :</label>
-            <mat-form-field> 
-            <input  type="datetime-local"  matInput >
+        <div flex="50" >
+                <mat-form-field > 
+                <input placeholder="No of Leaves Applied" value={{applied_leaves}} matInput >
+                </mat-form-field>
+       </div>
+       <div flex="50" >
+            <mat-form-field > 
+            <input  placeholder="Remaining Leaves" value={{remaining_leaves}} matInput >
+            </mat-form-field>
+       </div>
+        <div >
+            <mat-form-field > 
+            <input [(ngModel)]="startDate" placeholder="Start Date" type="datetime-local"  matInput >
             </mat-form-field>
         </div>
         <div class="blocks" fxLayout="row" fxFlex = "auto">
-            <label>End Date :</label>
+          
             <mat-form-field>
-            <input type="datetime-local" matInput>
+            <input [(ngModel)]="endDate" placeholder="End Date"  type="datetime-local" matInput>
             </mat-form-field>
         </div>
         <div class="blocks" fxLayout="row" fxFlex = "auto">
-            <label>Reason For Leave:</label>
             <mat-form-field>
-            <textarea matInput></textarea>
+            <textarea [(ngModel)]="reasonLeave" placeholder="Reason for Leave" matInput></textarea>
             </mat-form-field>
         </div>
-        <div class="blocks" fxLayout="row" fxFlex = "auto">
-            <label>No of leaves :</label>
+        <div class="blocks" fxLayout="row" fxFlex = "auto">  
             <mat-form-field>
-            <input  matInput>
+            <input [(ngModel)]="noOfLeaves" placeholder="No of leaves" matInput>
             </mat-form-field>
         </div>
-        <div class="blocks" fxLayout="row" fxFlex = "auto">
-            <label>Status:</label>
-            <mat-form-field>
-            <input  matInput>
-            </mat-form-field>
+        <div>
+         <button mat-raised-button  color="primary" (click)="setLeavesreqIntoDB()" >Submit</button>
         </div>
-        <div class="blocks" fxLayout="row" fxFlex = "auto">
-            <label>Mobile No:</label> <mat-icon>phone_paused</mat-icon>
-            <mat-form-field>
-            <input  matInput>
-            </mat-form-field>
+        <div>
+        <button mat-raised-button  color="warn" (click)="close()" >Cancel</button>
         </div>
     </div>
