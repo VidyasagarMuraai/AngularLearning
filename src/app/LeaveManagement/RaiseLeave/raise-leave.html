@@ -1,0 +1,38 @@
+<div class="container" fxLayout="row wrap" fxLayoutAlign="Start" *ngIf="leaveShow">
+        <div class="blocks" fxLayout="row"  fxFlex = "auto">
+            <label>Start Date :</label>
+            <mat-form-field> 
+            <input  type="datetime-local"  matInput >
+            </mat-form-field>
+        </div>
+        <div class="blocks" fxLayout="row" fxFlex = "auto">
+            <label>End Date :</label>
+            <mat-form-field>
+            <input type="datetime-local" matInput>
+            </mat-form-field>
+        </div>
+        <div class="blocks" fxLayout="row" fxFlex = "auto">
+            <label>Reason For Leave:</label>
+            <mat-form-field>
+            <textarea matInput></textarea>
+            </mat-form-field>
+        </div>
+        <div class="blocks" fxLayout="row" fxFlex = "auto">
+            <label>No of leaves :</label>
+            <mat-form-field>
+            <input  matInput>
+            </mat-form-field>
+        </div>
+        <div class="blocks" fxLayout="row" fxFlex = "auto">
+            <label>Status:</label>
+            <mat-form-field>
+            <input  matInput>
+            </mat-form-field>
+        </div>
+        <div class="blocks" fxLayout="row" fxFlex = "auto">
+            <label>Mobile No:</label> <mat-icon>phone_paused</mat-icon>
+            <mat-form-field>
+            <input  matInput>
+            </mat-form-field>
+        </div>
+    </div>

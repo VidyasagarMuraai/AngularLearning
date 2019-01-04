@@ -1,0 +1,11 @@
+.container {
+  display: flex; /* or inline-flex */
+}
+  
+.example-container {
+  width: 100px;
+  height: 600px;
+  margin: 10px;
+ 
+}
+

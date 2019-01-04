@@ -6,14 +6,20 @@ import {Router} from '@angular/router';
     //styleUrls: ['./app.component.css']
   })
   export class LoginComponent implements OnInit{
+    loginHide:boolean;
     ngOnInit(): void {
-        this.router.navigate(['/login']);
+      this.loginHide=true;
     }
     constructor(private router : Router){
-         
-       
     }
-    getLoginEntry(){
-        this.router.navigate(['/login']);
+    getAppComponent(){
+      localStorage.setItem("InitialValue",'AppCompShow');
+      this.loginHide=false;
+      this.router.navigate(['/leave']);
+  
+    }
+    getForgetPasswordForm(){
+      this.router.navigate(['/app']);
+      localStorage.setItem("ForgetPassword",'show');
     }
   }

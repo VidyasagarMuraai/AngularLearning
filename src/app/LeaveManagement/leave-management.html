@@ -1,0 +1,32 @@
+<div class="container"
+  fxLayoutAlign="center" class="content" *ngIf="leaveHide">
+  <h1>Leave Management System</h1>
+</div >
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="content">
+    
+          <div>
+              <button mat-raised-button  color="primary">Leave Request</button>
+          </div>
+          <div>
+              <button mat-raised-button  color="primary">No of Leaves</button>
+          </div>
+          <div>
+              <button mat-raised-button  color="primary">Status</button>
+          </div>
+          <div>
+              <button mat-raised-button  color="primary" color="warn" (click)="onLogoutClick()" *ngIf="leaveHide">Logout</button>
+          </div>
+          <div>
+              <mat-icon img mat-card-image style="margin-left:24%;width:45%;height:110px;" src="/src/images/download.jpg" alt="Muraai">account_box</mat-icon>
+              
+          </div>
+      
+  </div>
+       
+
+
+ 
+
+  
+

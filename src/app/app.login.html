@@ -1,30 +1,37 @@
-<form action="">
-    <div class='form-group'>
-            <label for="">UserID</label>
-            <mat-form-field>
-            <input matInput placeholder="login ID" value="vidyasagar">
-            </mat-form-field>
-
-    </div>
-    <div class="form-group">
-            <label for="">Password</label>
-            <mat-form-field>
-            <input matInput placeholder="password" value="vidyasagar">
-            </mat-form-field>
-    </div>
-   <nav>
-            <div>
-            <a routerLink="/app" >
-            <button mat-raised-button color="primary" >Login</button> 
-            </a>
+<mat-card style="margin-left: 40%;width:25%;height:400px;" *ngIf="loginHide">
+                <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                 <mat-card-title>Welcome</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image style="margin-left:24%;width:45%;height:110px;" src="/src/images/download.jpg" alt="Muraai">
+        <form action="">
+        
+            <div class='form-group' >
+                    <label for="">UserID</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <mat-form-field>
+                    <input matInput placeholder="login ID" value="vidyasagar">
+                    </mat-form-field>
+        
             </div>
-            <div>
-            <a routerLink="/routing" >
-           <button button mat-raised-button color="accent">Forgot Password</button>
-           </a>
-          </div>
-      
-      </nav>
-      <router-outlet></router-outlet>
-    </form>
-
+            <div class="form-group" style="width:100%" >
+                    <label for="">Password</label>&nbsp;&nbsp;
+                    <mat-form-field>
+                    <input matInput placeholder="password" value="vidyasagar">
+                    </mat-form-field>
+            </div>
+              
+                    <div > 
+                     <nav>
+                    <a routerLink="/leave" >
+                    <button mat-raised-button style="float:left" color="primary" (click)="getAppComponent()">Login</button> 
+                    </a></nav></div>   
+                   <div >
+                   <nav>
+                     <a routerLink="/routing" >
+                      <button button mat-raised-button style="float:left" color="accent" (click)="getForgetPasswordForm()">Forgot Password</button>
+                      </a>
+                   </nav>
+                </div>
+              
+            </form>
+        </mat-card>

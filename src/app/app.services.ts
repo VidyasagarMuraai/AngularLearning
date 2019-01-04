@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 @Injectable({
     providedIn: 'root',
@@ -12,11 +13,6 @@ export class ConfigService {
   name :any;
   jobName :any;
   constructor(private http: HttpClient) { 
-      
-        
-         //return this.http.get(configUrl);
-        
-
   }
   
   getData(): Observable<any> {
@@ -44,9 +40,14 @@ export class ConfigService {
     return this.http.put(configUrl, body, httpOptions)
     
   }
-  getAlbums(): Observable<any> {
-     let albumUrl='/cordys/WSDLGateway.wcp?service=http%3A%2F%2Fschemas.cordys.com%2FRandstadLMS/GetLMSUserMasterDetails&organization=o%3DRandstadNew%2Ccn%3Dcordys%2Ccn%3DdefaultInst%2Co%3Dmuraai.com';
-     return this.http.get(albumUrl, { responseType: 'text'});
+  getAlbums() {
+  let defaultCT = "?defaultinst_ct=7d939a0e5ff995735fcdab8a54be58a0fd4a488a" ;
+  let headers = new HttpHeaders({ 'Content-Type': 'text/xml',
+  'Access-Control-Allow-Origin': '*',
+  'SAMLart': 	'MDGYKJmEaFZxo57tLFkV87ErYS7174nBIzWMTL8Ys+qgiJNODFAPZQab' });
+  return this.http.post('RandstadNew/' + '/com.eibus.web.soap.Gateway.wcp' + defaultCT,
+  '<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><GetLMSUserDetails xmlns="http://schemas.cordys.com/RandstadLMS" preserveSpace="no" qAccess="0" qValues=""><userid>shashank.s</userid></GetLMSUserDetails></SOAP:Body></SOAP:Envelope>'
+  , { headers:  headers});
   }
   getDataForSingleUser(data: any){
     let serviceUrl="https://reqres.in/api/users/"+data;
@@ -63,5 +64,17 @@ export class ConfigService {
     return this.http.delete(deleteUrl,httpOptions);
 
   }
+  getCordysService(){
+    let configUrl='RandstadNew' + '/com.eibus.web.soap.Gateway.wcp'+'?defaultinst_ct=7d939a0e5ff995735fcdab8a54be58a0fd4a488a';
+    const httpOptions = {
+      headers: new HttpHeaders({
+     'Content-Type':  'text/xml',
+     'Access-Control-Allow-Origin': '*',
+     'SAMLart':'MDGYKJmEaFZxo57tLFkV87ErYS7174nBIzU3njhkxy6u7yj1i/2zs4Yp' })
+ }; 
+    return this.http.post(configUrl,'<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><GetLMSUserDetails xmlns="http://schemas.cordys.com/RandstadLMS" preserveSpace="no" qAccess="0" qValues=""><userid>shashank.s</userid></GetLMSUserDetails></SOAP:Body></SOAP:Envelope>', httpOptions)
+    
+  }
+
  
 }
