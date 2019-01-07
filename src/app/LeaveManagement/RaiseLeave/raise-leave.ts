@@ -71,6 +71,7 @@ declare var $:any;
       var timeDiff = Math.abs(date2.getTime() - date1.getTime());   
       var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24)); 
       this.noOfLeaves=diffDays;
+      alert("enter")
 
     }
     public calNoOfAppliedLeaves(){
