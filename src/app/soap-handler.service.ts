@@ -151,14 +151,19 @@ import {
             +'</new></tuple></UpdateLeaveManagement></SOAP:Body></SOAP:Envelope>','xml');
           }
 
+          public getUserlogin(data:any){
+            let request = {
+              userID: data.user_id,
+              Password:data.password
 
+            };
+            return this.callOTPSSoapService(
+              "GetUserLoginBasedIdAndPass",
+              "http://schemas.cordys.com/Wsapp",
+              request,
+              null
+              );
+            }
 
-        
-      
-
-    
-  
-   
-  
   }
   

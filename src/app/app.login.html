@@ -9,14 +9,14 @@
             <div class='form-group' >
                     <label for="">UserID</label>&nbsp;&nbsp;&nbsp;&nbsp;
                     <mat-form-field>
-                    <input matInput placeholder="login ID" value="vidyasagar">
+                    <input name="loginID"  [(ngModel)]="loginID" type="text" placeholder="login ID" matInput>
                     </mat-form-field>
         
             </div>
             <div class="form-group" style="width:100%" >
                     <label for="">Password</label>&nbsp;&nbsp;
                     <mat-form-field>
-                    <input matInput placeholder="password" value="vidyasagar">
+                    <input name="password" [(ngModel)]="password" type="text" placeholder="password" matInput>
                     </mat-form-field>
             </div>
               

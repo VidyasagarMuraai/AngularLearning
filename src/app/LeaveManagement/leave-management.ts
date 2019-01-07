@@ -36,6 +36,7 @@ declare var $:any;
     status:any;
     leaves_remain:any;
     user_id:any;
+    logoutButon:boolean;
    
     ngOnInit(): void {
       this.userDetailsTemplates();
@@ -98,5 +99,8 @@ declare var $:any;
           width: '800px',
           data: {userID:this.user_id}
          });
+    }
+    public ShowLogout(){
+      this.logoutButon = !this.logoutButon;
     }
   }

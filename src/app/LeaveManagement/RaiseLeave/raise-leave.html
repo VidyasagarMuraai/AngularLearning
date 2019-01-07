@@ -1,39 +1,42 @@
-<div class="container" fxLayout="row wrap" fxLayoutAlign="Start" *ngIf="leaveShow">
-        <div flex="50" >
+<div class="container" fxLayout="row nowrap" fxLayoutAlign="Start" *ngIf="leaveShow">
+        <div display= "flex"  fxFlex="50%" >
                 <mat-form-field > 
-                <input placeholder="No of Leaves Applied" value={{applied_leaves}} matInput >
+                <input placeholder="No of Leaves Applied" value={{applied_leaves}} matInput disabled>
                 </mat-form-field>
        </div>
-       <div flex="50" >
+       <div display= "flex" >
             <mat-form-field > 
-            <input  placeholder="Remaining Leaves" value={{remaining_leaves}} matInput >
+            <input  placeholder="Remaining Leaves" value={{remaining_leaves}} matInput disabled>
             </mat-form-field>
        </div>
-        <div >
+    </div>
+    <div class="container" fxLayout="row wrap" fxLayoutAlign="Start" *ngIf="leaveShow">
+        <div  display= "flex" fxFlex="30%" >
             <mat-form-field > 
             <input [(ngModel)]="startDate" placeholder="Start Date" type="datetime-local"  matInput >
             </mat-form-field>
         </div>
-        <div class="blocks" fxLayout="row" fxFlex = "auto">
+        <div  display= "flex" fxFlex = "30%">
           
             <mat-form-field>
-            <input [(ngModel)]="endDate" placeholder="End Date"  type="datetime-local" matInput>
+            <input [(ngModel)]="endDate" placeholder="End Date"  type="datetime-local" (blur)="validation()" matInput>
             </mat-form-field>
         </div>
-        <div class="blocks" fxLayout="row" fxFlex = "auto">
+        <div   display= "flex" fxFlex = "30%">
             <mat-form-field>
-            <textarea [(ngModel)]="reasonLeave" placeholder="Reason for Leave" matInput></textarea>
+            <input [(ngModel)]="reasonLeave" placeholder="Reason for Leave" matInput>
             </mat-form-field>
         </div>
-        <div class="blocks" fxLayout="row" fxFlex = "auto">  
-            <mat-form-field>
-            <input [(ngModel)]="noOfLeaves" placeholder="No of leaves" matInput>
+        <div  display= "flex" fxFlex = "30%" >  
+            <mat-form-field >
+            <input [(ngModel)]="noOfLeaves" placeholder="No of leaves" matInput disabled>
             </mat-form-field>
         </div>
-        <div>
+        <div display= "flex"  fxLayoutGap="80px" class="content" >
          <button mat-raised-button  color="primary" (click)="setLeavesreqIntoDB()" >Submit</button>
         </div>
         <div>
-        <button mat-raised-button  color="warn" (click)="close()" >Cancel</button>
+        <button mat-raised-button  color="warn" (click)="close()">Cancel</button>
         </div>
-    </div>
+  </div>
+   

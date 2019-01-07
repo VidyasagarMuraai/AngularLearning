@@ -9,16 +9,22 @@
               <button mat-raised-button  color="primary" (click)="leaveRequestRise()" >Leave Request</button>
           </div>
           <div>
-              <button mat-raised-button  color="primary">No of Leaves</button>
+              <button mat-raised-button  color="primary">Travel Expenses</button>
           </div>
           <div>
-              <button mat-raised-button  color="primary">Status</button>
+              <button mat-raised-button  color="primary">Food Expenses</button>
           </div>
           <div>
               <button mat-raised-button  color="primary" color="warn" (click)="onLogoutClick()" *ngIf="leaveHide">Logout</button>
           </div>
           <div>
-              <mat-icon img mat-card-image style="margin-left:24%;width:45%;height:110px;" src="/src/images/download.jpg" alt="Muraai">account_box</mat-icon>
+              <img  style="margin-left:24%;width:30%;height:110px;" src="/src/images/download.jpg" (click)="ShowLogout()"/>
+              
+               
+                  <button mat-menu-item  *ngIf="logoutButon" >
+                  <label>Logouta</label>
+                </button>
+               
           </div>
       
   </div>
@@ -26,91 +32,94 @@
     <h1>Welcome {{username}}</h1>
   </div>
 
-  <div  fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="60px" class="content">
-      <div >
+  <div  display="flex" fxLayout="row wrap" fxLayoutAlign="flex-start center " fxLayoutGap="80px" class="content">
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Name" value={{username}}>
+                <input matInput placeholder="Name" value={{username}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div >
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Father Name" value={{father_name}}>
+                <input matInput placeholder="Father Name" value={{father_name}} disabled> 
               </mat-form-field>
             </form>
       </div>
-      <div >
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Mother Name" value={{mother_name}}>
+                <input matInput placeholder="Mother Name" value={{mother_name}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div >
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Mobile No" value={{phoneNo}}>
+                <input matInput placeholder="Mobile No" value={{phoneNo}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address" value={{location}}>
+                <input matInput placeholder="Address" value={{location}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Designation" value={{designation}}>
+                <input matInput placeholder="Designation" value={{designation}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Experience" value={{experience}}>
+                <input matInput placeholder="Experience" value={{experience}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Projects Handled" value={{projects}}>
+                <input matInput placeholder="Projects Handled" value={{projects}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Project Manager" value={{manager}}>
+                <input matInput placeholder="Project Manager" value={{manager}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Leaves Applied" value={{leaves_applied}}>
+                <input matInput placeholder="Leaves Applied" value={{leaves_applied}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Leaves Remaining" value={{leaves_remain}}>
+                <input matInput placeholder="Leaves Remaining" value={{leaves_remain}} disabled>
               </mat-form-field>
             </form>
       </div>
-      <div>
+      <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Status" value={{status}}>
+                <input matInput placeholder="Status" value={{status}} disabled>
               </mat-form-field>
             </form>
       </div>
+  </div>
+  <div  display="flex" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="80px" class="content">
+    <button  mat-raised-button  color="accent" (clcik)="updateUserData()">Update</button>
   </div>
        
 

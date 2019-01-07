@@ -59,6 +59,18 @@ declare var $:any;
         }
       )
     }
+    public close(){
+      this.dialogRef.close();
+    }
+    public validation(){
+     // alert("Enter");
+      var date2 = new Date(this.startDate);
+      var date1 = new Date(this.endDate);
+      var timeDiff = Math.abs(date2.getTime() - date1.getTime());   
+      var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24)); 
+      this.noOfLeaves=diffDays;
+
+    }
     
 
     
