@@ -18,6 +18,7 @@ declare var $:any;
     endDate:any;
     reasonLeave:any;
     noOfLeaves:any;
+    calTotalLeaves:any;
     ngOnInit(): void {
       let i=localStorage.getItem("LeaveRequest");
    
@@ -55,7 +56,8 @@ declare var $:any;
         (response) =>{
           console.log("Successfully Inserted"+response);
 
-          this.dialogRef.close();
+          this.dialogRef.close(this.calNoOfAppliedLeaves());
+          
         }
       )
     }
@@ -70,6 +72,18 @@ declare var $:any;
       var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24)); 
       this.noOfLeaves=diffDays;
 
+    }
+    public calNoOfAppliedLeaves(){
+     
+        this.remaining_leaves=this.remaining_leaves-this.noOfLeaves;
+        this.applied_leaves= parseInt(this.applied_leaves) + parseInt(this.noOfLeaves);
+     
+      
+      this.soapHandler.updateTotalLeaves(this.user_id,this.remaining_leaves,this.applied_leaves).subscribe(
+        (response) =>{
+            
+        }
+      )
     }
     
 

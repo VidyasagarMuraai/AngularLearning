@@ -29,10 +29,12 @@ declare var $:any;
           let tupleNodes = $.cordys.json.findObjects(response, 'USER_LOGIN');
           this.successlogin=tupleNodes[0].count_user;
           console.log("the response is"+this.successlogin);
-          alert("success");
-          localStorage.setItem("InitialValue",'AppCompShow');
-          this.loginHide=false;
-          this.router.navigate(['/leave']);
+          if(this.successlogin=='1'){
+            localStorage.setItem("InitialValue",'AppCompShow');
+            this.loginHide=false;
+            this.router.navigate(['/leave']);
+          }
+          
         },
         (err)=>{
 

@@ -164,6 +164,15 @@ import {
               null
               );
             }
+          public updateTotalLeaves(data1:any,data2:any,data3:any){
+            return this.httpPostRequest(SOAPHandlerService.getGateWayURL(),
+            '<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body> '
+            +'<UpdateUserDetails xmlns="http://schemas.cordys.com/Wsapp" reply="yes" commandUpdate="no" preserveSpace="no" batchUpdate="no"> '
+            +'<tuple><old><USER_DETAILS qConstraint="0"><USER_ID>'+data1+'</USER_ID></USER_DETAILS></old><new> '
+            +'<USER_DETAILS qAccess="0" qConstraint="0" qInit="0" qValues=""><NO_OF_LEAVES_REMAIN>'+data2+'</NO_OF_LEAVES_REMAIN> '
+            +'<NO_OF_LEAVES_APPLIED>'+data3+'</NO_OF_LEAVES_APPLIED><USER_ID>'+data1+'</USER_ID></USER_DETAILS></new></tuple></UpdateUserDetails> '
+            +'</SOAP:Body></SOAP:Envelope>','xml');
+          }
 
   }
   

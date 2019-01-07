@@ -37,14 +37,14 @@ declare var $:any;
     leaves_remain:any;
     user_id:any;
     logoutButon:boolean;
-   
+    isdisabled=true;
     ngOnInit(): void {
-      this.userDetailsTemplates();
-      //this.loginHide=true;
+      
       let leaveComp= localStorage.getItem("InitialValue");
        if(leaveComp=="AppCompShow"){
         this.leaveHide=true;
        }
+       this.userDetailsTemplates();
     }
    constructor(private sOAPHandlerService:SOAPHandlerService,private router:Router,private dialog:MatDialog){
 
@@ -83,6 +83,9 @@ declare var $:any;
         console.log(response);
       }
      )
+    }
+    updaterequest(){
+      this.isdisabled=!this.isdisabled;
     }
     public openLeaveReq(){
      

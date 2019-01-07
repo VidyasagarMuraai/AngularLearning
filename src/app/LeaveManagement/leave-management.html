@@ -3,7 +3,7 @@
   <h1>Leave Management System</h1>
 </div >
 
-  <div fxLayout="row" fxLayoutAlign="space-around center" class="content">
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="content" *ngIf="leaveHide">
     
           <div>
               <button mat-raised-button  color="primary" (click)="leaveRequestRise()" >Leave Request</button>
@@ -15,111 +15,111 @@
               <button mat-raised-button  color="primary">Food Expenses</button>
           </div>
           <div>
-              <button mat-raised-button  color="primary" color="warn" (click)="onLogoutClick()" *ngIf="leaveHide">Logout</button>
+              <button mat-raised-button  color="primary" color="warn" (click)="onLogoutClick()" >Logout</button>
           </div>
           <div>
               <img  style="margin-left:24%;width:30%;height:110px;" src="/src/images/download.jpg" (click)="ShowLogout()"/>
               
                
                   <button mat-menu-item  *ngIf="logoutButon" >
-                  <label>Logouta</label>
+                  <label>Logout</label>
                 </button>
                
           </div>
       
   </div>
-  <div>
+  <div *ngIf="leaveHide">
     <h1>Welcome {{username}}</h1>
   </div>
 
-  <div  display="flex" fxLayout="row wrap" fxLayoutAlign="flex-start center " fxLayoutGap="80px" class="content">
+  <div  display="flex" fxLayout="row wrap" fxLayoutAlign="flex-start center " fxLayoutGap="80px" class="content" *ngIf="leaveHide">
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Name" value={{username}} disabled>
+                <input matInput placeholder="Name" value={{username}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Father Name" value={{father_name}} disabled> 
+                <input matInput placeholder="Father Name" value={{father_name}} [disabled]="isdisabled"> 
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Mother Name" value={{mother_name}} disabled>
+                <input matInput placeholder="Mother Name" value={{mother_name}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Mobile No" value={{phoneNo}} disabled>
+                <input matInput placeholder="Mobile No" value={{phoneNo}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address" value={{location}} disabled>
+                <input matInput placeholder="Address" value={{location}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Designation" value={{designation}} disabled>
+                <input matInput placeholder="Designation" value={{designation}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Experience" value={{experience}} disabled>
+                <input matInput placeholder="Experience" value={{experience}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Projects Handled" value={{projects}} disabled>
+                <input matInput placeholder="Projects Handled" value={{projects}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Project Manager" value={{manager}} disabled>
+                <input matInput placeholder="Project Manager" value={{manager}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Leaves Applied" value={{leaves_applied}} disabled>
+                <input matInput placeholder="Leaves Applied" value={{leaves_applied}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Leaves Remaining" value={{leaves_remain}} disabled>
+                <input matInput placeholder="Leaves Remaining" value={{leaves_remain}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
       <div flex="33">
           <form class="example-form">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Status" value={{status}} disabled>
+                <input matInput placeholder="Status" value={{status}} [disabled]="isdisabled">
               </mat-form-field>
             </form>
       </div>
   </div>
-  <div  display="flex" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="80px" class="content">
-    <button  mat-raised-button  color="accent" (clcik)="updateUserData()">Update</button>
+  <div  display="flex" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="80px" class="content" *ngIf="leaveHide">
+    <button  mat-raised-button  color="accent" (click)="updaterequest()">Update</button>
   </div>
        
 

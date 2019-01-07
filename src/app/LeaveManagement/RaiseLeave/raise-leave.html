@@ -1,12 +1,12 @@
 <div class="container" fxLayout="row nowrap" fxLayoutAlign="Start" *ngIf="leaveShow">
         <div display= "flex"  fxFlex="50%" >
                 <mat-form-field > 
-                <input placeholder="No of Leaves Applied" value={{applied_leaves}} matInput disabled>
+                <input name="remaining_leaves" [(ngModel)]="remaining_leaves" placeholder="No of Leaves Applied"  matInput disabled>
                 </mat-form-field>
        </div>
        <div display= "flex" >
             <mat-form-field > 
-            <input  placeholder="Remaining Leaves" value={{remaining_leaves}} matInput disabled>
+            <input name="applied_leaves" [(ngModel)]="applied_leaves" placeholder="Remaining Leaves"  matInput disabled>
             </mat-form-field>
        </div>
     </div>
